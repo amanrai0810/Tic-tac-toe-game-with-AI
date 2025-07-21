@@ -1,58 +1,80 @@
 body {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  background: #641B2E;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000, #ff9900, #008000, #ff0000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.current-player {
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    font-size: 20px;
 }
 
 .board {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  gap: 5px;
-  justify-content: center;
-  margin: 100px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-gap: 5px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
 }
 
 .cell {
-  width: 100px;
-  height: 100px;
-  font-size: 2.5em;
-  background: #FBDB93;
-  border: 2px solid #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .cell:hover {
-  background-color: #F4E7E1;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
 }
 
-.cell.clicked {
-  animation: pop 0.3s ease;
+.restart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-@keyframes pop {
-  0% { transform: scale(0.8); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+.restart-btn:hover {
+    background-color: #ddd;
 }
 
-.cell.win {
-  background-color: #aaffaa !important;
-  animation: flash 0.5s infinite alternate;
-}
-
-@keyframes flash {
-  from { background-color: #aaffaa; }
-  to { background-color: #66ff66; }
-}
-
-#status {
-  font-size: 20px;
-  margin-top: 10px;
-  color: #F4E7E1;
-}
-h1{
-    color: #FF9B45;
+.footer {
+    margin-top: 20px;
+    font-size: 18px;
+    opacity: 0.8;
+    text-align: center;
 }
