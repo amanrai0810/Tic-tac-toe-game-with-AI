@@ -7,9 +7,16 @@
 </head>
 <body>
   <h1>Tic Tac Toe - Player vs AI</h1>
-  <div id="board" class="board"></div>
-  <p id="status"></p>
-  <button onclick="resetGame()">Restart</button>
+  
+    <div class="current-player" id="currentPlayer">Current Player ~ X</div>
+<div class="game-container">
+    <div id="board" class="board"></div>
+    <div id="status" class="status"></div>
+    
+    <button id="resetBtn" class="reset-btn">Restart Game</button>
+    <div class="footer">Aman Rai</div>
+</div>
+
 
   
 <audio id="clickSound" src="click.mp3.wav"></audio>
@@ -20,3 +27,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
